@@ -20,6 +20,6 @@ jobs:
     - name: Compile, build and push
       run: |
         mvn package
-        docker build --tag ghcr.io/aether78/pet-clinic:latest -f Dockerfile
+        docker build --tag ghcr.io/aether78/pet-clinic:latest -f Dockerfile .
         docker login --username aether78 --password $GITHUB_ACCESSTOKEN ghcr.io
         docker push ghcr.io/aether78/pet-clinic:latest
